@@ -2,11 +2,13 @@ var ctx = document.getElementById("chart");
 var myChart = new Chart(ctx, {
    type: 'horizontalBar',
    data: {
+       // Populate labels dynamically using server-side data
        labels: [{% for item in labels %}
                  "{{item}}",
                {% endfor %}],
        datasets: [{
            label: '# of Mentions',
+           // Populate data dynamically using server-side data
            data: [{% for item in values %}
                     {{item}},
                    {% endfor %}],
@@ -49,15 +51,20 @@ var myChart = new Chart(ctx, {
        }
    }
 });
+
 var src_Labels = [];
 var src_Data = [];
+
 setInterval(function(){
    $.getJSON('/refreshData', {
    }, function(data) {
+       // Get updated labels and data from the server
        src_Labels = data.sLabel;
        src_Data = data.sData;
    });
+
+   // Update the chart with the new labels and data
    myChart.data.labels = src_Labels;
    myChart.data.datasets[0].data = src_Data;
    myChart.update();
-},1000);
+}, 1000);

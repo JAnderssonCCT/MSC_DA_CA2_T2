@@ -37,3 +37,9 @@
     - 'E:\\nltk_data'
 **********************************************************************
 
+2023-05-25 00:31:13 - ERROR - Error occurred during sentiment analysis and visualization.
+2023-05-25 00:31:13 - ERROR - 'float' object has no attribute 'encode'
+2023-05-25 00:35:46 - ERROR - Error occurred during sentiment analysis and visualization.
+2023-05-25 00:35:46 - ERROR - 'float' object has no attribute 'encode'
+2023-05-25 00:39:09 - ERROR - An error occurred during sentiment analysis and classification.
+2023-05-25 00:39:09 - ERROR - The `text` argument passed to `__init__(text)` must be a string, not <class 'float'>
